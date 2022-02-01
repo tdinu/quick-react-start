@@ -8,6 +8,20 @@ class App extends Component {
 
     this.state = {
       string: 'Hello there',
+      data: [
+        {
+          name: 'Alexa',
+          id: 0,
+        },
+        {
+          name: 'Siri',
+          id: 1,
+        },
+        {
+          name: 'Cortana',
+          id: 2,
+        },
+      ],
     };
   }
 
@@ -16,6 +30,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          {this.state.data.map((el) => {
+            return <div key={el.id}>{el.name}</div>;
+          })}
           <p>{this.state.string}</p>
           <button
             onClick={() => {
