@@ -11,6 +11,9 @@ class App extends Component {
       searchString: '',
       data: [],
     };
+
+    /* no arrow function, then bind this
+    this.handleChange = this.handleChange.bind(this); */
   }
 
   componentDidMount() {
@@ -18,6 +21,15 @@ class App extends Component {
       .then((response) => response.json())
       .then((res) => this.setState({ data: res }));
   }
+
+  handleChange = (e) => {
+    this.setState({ searchString: e.target.value });
+  }
+
+  /* no arrow function, then bind this
+  handleChange(e) {
+    this.setState({ searchString: e.target.value });
+  } */
 
   render() {
     const { searchString, data } = this.state;
@@ -32,9 +44,7 @@ class App extends Component {
       <div className="App">
         <SearchBox
           placeholder="Search item..."
-          handleChange={(e) => {
-            this.setState({ searchString: e.target.value });
-          }}
+          handleChange={this.handleChange}
         />
         <CardList data={filteredData} />
       </div>
