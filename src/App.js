@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CardList } from './components/card-list/card-list.component';
 
 class App extends Component {
   constructor() {
@@ -35,10 +36,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <CardList name={'Lilly'}>
+            {this.state.data.map((el) => {
+              return <div key={el.id}>{el.name}</div>;
+            })}
+          </CardList>
           <img src={logo} className="App-logo" alt="logo" />
-          {this.state.data.map((el) => {
-            return <div key={el.id}>{el.name}</div>;
-          })}
+
           <p>{this.state.string}</p>
           <button
             onClick={() => {
