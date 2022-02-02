@@ -24,7 +24,7 @@ class App extends Component {
 
   handleChange = (e) => {
     this.setState({ searchString: e.target.value });
-  }
+  };
 
   /* no arrow function, then bind this
   handleChange(e) {
@@ -42,6 +42,7 @@ class App extends Component {
     // console.log('destructured data:', data);
     return (
       <div className="App">
+        <h1>Title page</h1>
         <SearchBox
           placeholder="Search item..."
           handleChange={this.handleChange}
