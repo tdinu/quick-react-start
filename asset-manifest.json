@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/quick-react-start/static/css/main.3e1637f4.css",
+    "main.js": "/quick-react-start/static/js/main.fb2cc0fc.js",
+    "static/js/787.124f4890.chunk.js": "/quick-react-start/static/js/787.124f4890.chunk.js",
+    "index.html": "/quick-react-start/index.html",
+    "main.3e1637f4.css.map": "/quick-react-start/static/css/main.3e1637f4.css.map",
+    "main.fb2cc0fc.js.map": "/quick-react-start/static/js/main.fb2cc0fc.js.map",
+    "787.124f4890.chunk.js.map": "/quick-react-start/static/js/787.124f4890.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e1637f4.css",
+    "static/js/main.fb2cc0fc.js"
+  ]
+}
