@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
 
 class App extends Component {
   constructor() {
@@ -29,10 +30,9 @@ class App extends Component {
     // console.log('destructured data:', data);
     return (
       <div className="App">
-        <input
-          type={'search'}
+        <SearchBox
           placeholder="Search item..."
-          onChange={(e) => {
+          handleChange={(e) => {
             this.setState({ searchString: e.target.value });
           }}
         />
