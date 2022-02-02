@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component';
 
@@ -8,21 +7,8 @@ class App extends Component {
     super();
 
     this.state = {
-      string: 'Hello there',
-      data: [
-        /* {
-          name: 'Alexa',
-          id: 0,
-        },
-        {
-          name: 'Siri',
-          id: 1,
-        },
-        {
-          name: 'Cortana',
-          id: 2,
-        }, */
-      ],
+      searchString: '',
+      data: [],
     };
   }
 
@@ -33,38 +19,27 @@ class App extends Component {
   }
 
   render() {
+    const { searchString, data } = this.state;
+    const filteredData = data.filter((item) =>
+      item.name.toLowerCase().includes(searchString.toLowerCase()),
+    );
+    // same as
+    // const searchString = this.state.searchString;
+    // const data = this.state.data;
+    // console.log('destructured data:', data);
     return (
       <div className="App">
-        <header className="App-header">
-          <CardList name={'Lilly'}>
-            {this.state.data.map((el) => {
-              return <div key={el.id}>{el.name}</div>;
-            })}
-          </CardList>
-          <img src={logo} className="App-logo" alt="logo" />
-
-          <p>{this.state.string}</p>
-          <button
-            onClick={() => {
-              this.setState({ string: 'Hello Meee' });
-            }}
-          >
-            Change
-          </button>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <input
+          type={'search'}
+          placeholder="Search item..."
+          onChange={(e) => {
+            this.setState({ searchString: e.target.value });
+          }}
+        />
+        <CardList data={filteredData} />
       </div>
     );
   }
 }
-
-// function App() { return (<></>)}
 
 export default App;
