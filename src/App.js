@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       string: 'Hello there',
       data: [
-        {
+        /* {
           name: 'Alexa',
           id: 0,
         },
@@ -20,7 +20,7 @@ class App extends Component {
         {
           name: 'Cortana',
           id: 2,
-        },
+        }, */
       ],
     };
   }
